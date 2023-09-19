@@ -1,0 +1,126 @@
+
+.text{
+    -fx-border-radius:0;
+    -fx-border-width:0.5;
+    -fx-border-color: #000;
+}
+.labelview{
+    -fx-border-radius:0;
+    -fx-border-width:0 1 0 1;
+    -fx-border-color: #000;
+    -fx-background-color: #d3e9f0;
+}
+
+.btn{
+    -fx-border-radius:0;
+    -fx-background-color: #fff;
+    -fx-border-width:0.5;
+    -fx-border-color: #000;
+
+}
+.btn:hover{
+    -fx-border-radius:0;
+    -fx-background-color: #fff;
+    -fx-border-width:0 5 0 0;
+    -fx-border-color: #09bce8;
+
+}
+.btn:active{
+    -fx-border-radius:0;
+    -fx-background-color: #d3e9f0;
+    -fx-border-width:0 5 0 0;
+    -fx-border-color: #09bce8;
+
+}
+.textfield{
+    -fx-border-color: #2196f3;
+    -fx-background-color: #fff;
+
+}
+/*.table-view{
+    -fx-background-color: aliceblue;
+    -fx-font-size:10;
+}*/
+.border{
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 0.4
+}
+.table-view {
+    -fx-background-color: aliceblue;
+}  /*
+*/.table-view .placeholder .label {
+         -fx-text-fill: #05D39B;
+         -fx-alignment: center;
+     } /*
+*/.table-view .filler,
+         .table-view .column-header{
+             -fx-background-color:#fff ,#1791cf;
+             -fx-background-insets :0,0 1 0 0;
+             -fx-size: 15.0px;
+             -fx-min-height: 20.0px;
+             -fx-cursor: hand;
+         }
+
+.table-view .column-header .label {
+    -fx-font-size: 0.83333em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-alignment: center;
+    -fx-padding: 5.0 5.0 5.0 5.0;
+}
+
+.table-view .column-header-background {
+    -fx-border-color: #2196f3;
+    -fx-background-color: #1791cf;
+}
+* {
+    -fx-primary-color: #007acc;
+    -fx-secondary-color: #4B6EAF;
+    -fx-light-grey-color: #d1d1d1;
+
+    -fx-focus-color: -fx-secondary-color;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 0;
+}
+.date-picker .arrow-button:hover {
+    -fx-background-color: -fx-secondary-color;
+}
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
+.date-picker .cell {
+    -fx-background-color: white;
+}
+.date-picker .cell:hover {
+    -fx-background-color: -fx-light-grey-color;
+}
+.date-picker .cell:focused {
+    -fx-background-color: -fx-light-grey-color;
+}
+.date-picker .selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: white;
+}
+.date-picker .selected:focused {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: white;
+}
+.date-picker-popup  {
+    -fx-border-color: transparent;
+}
+.date-picker-popup .month-year-pane {
+    -fx-background-color: -fx-primary-color;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: white;
+}
+.date-picker-popup .week-number-cell {
+    -fx-text-fill: -fx-secondary-color;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: white;
+}
