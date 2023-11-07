@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.stream.Stream;
+
+import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -112,6 +114,9 @@ public class PopUpController implements Initializable {
     SortedList<PopUpModel> sortedData = new SortedList<>(filteredData);
     sortedData.comparatorProperty().bind(tableView.comparatorProperty());
     tableView.setItems(sortedData);
+  }
+  public void reflection(){
+
   }
 }
 

@@ -36,6 +36,7 @@ public class utils {
                 continue;
             }
             String str = Objects.toString(val);
+
             if (sb.length() != 0) {
                 sb.append(", ");
             }
@@ -43,7 +44,7 @@ public class utils {
             if (val instanceof String || val instanceof Timestamp) {
                 sb.append("'").append(val).append("'");
             } else {
-                sb.append(str);
+        sb.append(escape(str));
             }
         }
 
@@ -52,10 +53,8 @@ public class utils {
     public static String generateInsertSQL(Object object, String tableName) {
         StringBuilder columnsBuilder = new StringBuilder();
         StringBuilder valuesBuilder = new StringBuilder();
-
         Field[] fields = object.getClass().getDeclaredFields();
         boolean isFirst = true;
-
         for (Field field : fields) {
             field.setAccessible(true);
             String columnName = field.getName();
@@ -65,7 +64,6 @@ public class utils {
             } catch (IllegalAccessException e) {
                 value = null;
             }
-
             if (value != null) {
                 if (!isFirst) {
                     columnsBuilder.append(", ");
@@ -76,7 +74,6 @@ public class utils {
                 isFirst = false;
             }
         }
-
         return "INSERT INTO "
                 + tableName
                 + " ("
@@ -122,21 +119,21 @@ public class utils {
     public static void restrictToNumbersOnly(JFXTextField... jfxTextFields) {
         for (JFXTextField jfxTextField : jfxTextFields) {
             String pattern = "[\\d,./]*";
-            jfxTextField.setTextFormatter(
-                    new TextFormatter<Object>(
-                            change -> {
-                                String newText = change.getControlNewText();
-                                if (newText.matches(pattern)) {
-                                    return change;
-                                } else {
-                                    Label label = new Label("Digits Only");
-                                    PopOver popOver = new PopOver();
-                                    popOver.setTitle("");
-                                    popOver.setContentNode(label);
-                                    popOver.show(jfxTextField);
-                                    return null;
-                                }
-                            }));
+      jfxTextField.setTextFormatter(
+          new TextFormatter<>(
+              change -> {
+                String newText = change.getControlNewText();
+                if (newText.matches(pattern)) {
+                  return change;
+                } else {
+                  Label label = new Label("Digits Only");
+                  PopOver popOver = new PopOver();
+                  popOver.setTitle("");
+                  popOver.setContentNode(label);
+                  popOver.show(jfxTextField);
+                  return null;
+                }
+              }));
         }
     }
     public static boolean isAnyTextFieldEmpty(JFXTextField... textFields) {

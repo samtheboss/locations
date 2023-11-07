@@ -22,6 +22,10 @@ public class PopUpModel {
   String Description;
   String code;
 
+  public PopUpModel(String description, String code) {
+    Description = description;
+    this.code = code;
+  }
 
   public String getDescription() {
     return Description;
@@ -40,15 +44,16 @@ public class PopUpModel {
     this.code = code;
   }
 
+  public PopUpModel() {
+  }
+
   public static ObservableList<PopUpModel> loadAccounts(String sql) {
     PreparedStatement pst;
     Connection conn = DBConnection.getConnection();
     ResultSet rs;
-    ObservableList<PopUpModel> data = FXCollections.observableArrayList();
     PopUpModel model = new PopUpModel();
-
+    ObservableList<PopUpModel> data = FXCollections.observableArrayList();
     try {
-
       pst = conn.prepareStatement(sql);
       rs = pst.executeQuery();
       while (rs.next()) {
@@ -62,5 +67,8 @@ public class PopUpModel {
       Logger.getLogger(PopUpModel.class.getName()).log(Level.SEVERE, null, ex);
     }
     return data;
+  }
+  public void cal(int j,int k){
+    System.out.println(j+k);
   }
 }

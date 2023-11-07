@@ -1,3 +1,5 @@
+package pops;
+
 import javafx.application.Application;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Scene;

@@ -14,22 +14,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.dbcp2.BasicDataSource;
 
+import javax.sql.DataSource;
+
 /**
  * @author smartApps
  */
 public class DBConnection {
   private static final BasicDataSource dataSource;
-
   static {
     dataSource = new BasicDataSource();
     dataSource.setDriverClassName("com.ibm.db2.jcc.DB2Driver");
-    dataSource.setUrl("jdbc:db2://localhost:50000/lubes");
+    dataSource.setUrl("jdbc:db2://localhost:50000/transmg");
     dataSource.setUsername("maliplus");
     dataSource.setPassword("Boss@3318");
     dataSource.setInitialSize(5);
     dataSource.setMaxTotal(20);
     dataSource.setMaxIdle(10);
   }
+
 
   public static Connection getConnection() {
     Connection conn = null;

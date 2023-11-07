@@ -32,7 +32,7 @@
     -fx-border-color: #09bce8;
 
 }
-.textfield{
+.text-field{
     -fx-border-color: #2196f3;
     -fx-background-color: #fff;
 
@@ -123,4 +123,31 @@
 .date-picker-popup .spinner .button .left-arrow,
 .date-picker-popup .spinner .button .right-arrow {
     -fx-background-color: white;
+}
+.bt{
+    /*    -fx-background-color:    #34c9eb;*/
+    -fx-border-width: 2 2 10 2;
+    -fx-border-color: #24caf0;
+    -fx-background-color: #F2FEFA;
+}
+.textfield{
+    -fx-border-color: #2196f3;
+    -fx-background-radius: 100px;
+    -fx-border-radius: 100px;
+}
+.labelview{
+    -fx-border-radius:0;
+    -fx-border-width:0 1 0 1;
+    -fx-border-color: #000;
+    -fx-background-color: #d3e9f0;
+}
+.border{
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 0.4
+}
+.card {
+    -fx-background-color: whitesmoke;
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);
+    -fx-padding: 16 16 16 16;
 }

@@ -200,9 +200,7 @@ public class LocationModel {
     ResultSet rs;
     ObservableList<LocationModel> data = FXCollections.observableArrayList();
     LocationModel model = new LocationModel();
-
     try {
-
       pst = conn.prepareStatement(sql);
       rs = pst.executeQuery();
       while (rs.next()) {

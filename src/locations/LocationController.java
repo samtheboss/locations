@@ -28,10 +28,7 @@ import pops.PopUpModel;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
@@ -242,11 +239,13 @@ public class LocationController implements Initializable {
         utils.Notification("Failed", "Location Already Exist", "error");
         initTable();
       } else {
-        List<WhereBy> wheres = new ArrayList<>();
-        wheres.add(new WhereBy("MAIN_LOCATION", locationCode));
+        //        List<WhereBy> wheres = new ArrayList<>();
+        List<WhereBy> wheres =
+            Collections.singletonList(new WhereBy("MAIN_LOCATION", locationCode));
+       // wheres.add(new WhereBy("MAIN_LOCATION", locationCode));
         String insertSql = Utils.utils.generateInsertSQL(model, "locations");
         String updateSql = Utils.utils.genUpdateSQL(model, wheres, "locations");
-
+        System.out.println(updateSql);
         if (updateOrSave) {
           DBConnection.updateData(updateSql);
           utils.Notification("Success", "Location update successful", "");
@@ -285,7 +284,6 @@ public class LocationController implements Initializable {
       FXMLLoader loader = new FXMLLoader(controller.getClass().getResource("/pops/PopUpUi.fxml"));
       loader.setController(new PopUpController(sql));
       Parent parent = loader.load();
-
       Stage stage = new Stage(StageStyle.DECORATED);
       stage.setTitle("SELECT POPUP");
       stage.setScene(new Scene(parent));
