@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="627.0" prefWidth="1214.0" stylesheets="@../Utils/css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="1164.0">
+         <children>
+            <Label prefHeight="70.0" prefWidth="96.0" styleClass="btn" text="Search Tab">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="filter" prefHeight="33.0" prefWidth="593.0" promptText="Find A Tab" styleClass="border" />
+            <Label layoutX="30.0" layoutY="10.0" prefHeight="33.0" prefWidth="160.0" styleClass="btn" text="Sum Order Amount" />
+            <Label fx:id="lblSumOrderAmount" layoutX="719.0" layoutY="10.0" prefHeight="33.0" prefWidth="290.0" styleClass="btn" text="Search Tab" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="564.0" prefWidth="1154.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pagination fx:id="pgItems" styleClass="border" HBox.hgrow="ALWAYS" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox>
+         <children>
+            <Button fx:id="btnPrevPage" layoutX="179.0" layoutY="10.0" mnemonicParsing="false" text="Prev" />
+            <JFXTextField fx:id="txtPageNumber" />
+            <Button fx:id="btnNextPage" mnemonicParsing="false" text="Next" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
